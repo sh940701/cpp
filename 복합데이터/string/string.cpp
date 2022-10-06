@@ -52,7 +52,7 @@ int main() {
     // float num1 = stof("1.1");
     // cout << num1 << endl;
 
-    // 
+    // cin.getline과 같은 역할을 하는 함수
     string str;
     getline(cin, str);
 
