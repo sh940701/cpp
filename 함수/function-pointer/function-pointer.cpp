@@ -196,7 +196,7 @@ int main() {
     // cout << typeid(f).name() << endl; // float
     // cout << typeid(d).name() << endl; // double
 
-    // typedef void (FuncType)(int);
+    typedef void (FuncType)(int);
     using FuncType = void(int);
     FuncType *f = gameOver;
     f(1); // gameOver
