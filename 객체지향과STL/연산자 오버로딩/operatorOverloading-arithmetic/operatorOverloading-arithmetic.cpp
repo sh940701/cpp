@@ -192,7 +192,18 @@ using namespace std;
 // }
 
 
+
+
 // 서로 다른 인자를 가지고 있는 object끼리의 연산
+// 사실 아래 코드에서는 class 하나가 무조건 밑에 가기 때문에, 내부 friend 선언으로
+// 원하는 class간 operator를 구현할 수 없다. 이를 해결하기 위해선 header 파일과 소스파일을
+// 사용하여 코드를 작성해야 한다. 다만 중요한 것은 class 간 서로 friend 를 선언해줄 수 있고
+// friend로 선언되면 해당 class의 private 멤버에 접근할 수 있다는 것이다.
+
+// 번외로 header파일과 소스파일 없이 아래 class간 operator 함수를 실행시키기 위해서는
+// 전역에 두 클래스 간 operator+ 함수를 정의하고, 이를 두 클래스에 각각 friend선언해주면 된다.
+// 이 때는 순서 상관없이, 전방선언을 해주면 prototype만 class에 friend되기 때문에 정상적으로 작동한다!
+
 // VectorI 전방선언 -> 전방선언만으로는 안됨
 class VectorI;
 
@@ -234,7 +245,7 @@ public:
     : x(x), y(y), z(z) {}
 
     // VectorF의 멤버함수 friend 추가
-    // friend VectorF VectorF::operator+(const VectorF) const;
+    // friend VectorF VectorF::operator+(const VectorF) const; -> 외않됨?
 };
 
 int main() {
