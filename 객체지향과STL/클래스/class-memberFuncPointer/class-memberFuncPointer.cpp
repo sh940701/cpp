@@ -46,7 +46,7 @@ using namespace std;
 //     (person.*sq)(3); // 9
 // }
 
-// // const 멤버함수 포인터로 변경하여 실행해보기
+// const 멤버함수 포인터로 변경하여 실행해보기
 class Person {
 public:
     // 멤버함수내 this를 const Person* this 로 바꿔줌
