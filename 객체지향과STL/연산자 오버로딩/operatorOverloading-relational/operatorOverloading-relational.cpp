@@ -125,6 +125,7 @@ int main() {
         cout << "!!!!" << endl;
     }
 
+    // 전역변수 선언은 아래와 같이 호출되는 것이다.
     if (operator==("x", s0)) {
         cout << "!!!!" << endl;
     }
