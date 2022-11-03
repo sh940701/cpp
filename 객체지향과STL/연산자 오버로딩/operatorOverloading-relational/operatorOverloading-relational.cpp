@@ -124,4 +124,8 @@ int main() {
     if ("x" == s0) {
         cout << "!!!!" << endl;
     }
+
+    if (operator==("x", s0)) {
+        cout << "!!!!" << endl;
+    }
 }
