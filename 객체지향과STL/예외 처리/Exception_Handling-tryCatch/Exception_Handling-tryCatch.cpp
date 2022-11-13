@@ -199,6 +199,8 @@ public:
     CustomException(const char* s)
         : _s(s) {}
     // 아래와 같이 exception의 what()함수를 오버라이딩 하여 원하는 text를 리턴하도록 설정해준다.
+    // 근데 여기서 _NOEXCEPT는 뭔지 모르겠다. 강의영상에는 없었는데 나는 없이 하니까 override가 안돼서
+    // 정의를 찾아봤더니 프로토타입에 저런게 있어서 넣었더니 됐다.. 머지
     virtual const char* what() const _NOEXCEPT override {
         return _s;
     }
