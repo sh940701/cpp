@@ -1,7 +1,7 @@
 // swap 함수 source 파일
 #include "swap.h"
 
-// 여기서 구체화를 해줌
+// 여기서 구현을 해줌
 template<typename T>
 void swap(T& x, T& y) {
     T temp = x;
