@@ -63,6 +63,7 @@
     "vector": "cpp",
     "algorithm": "cpp",
     "functional": "cpp",
-    "numeric": "cpp"
+    "numeric": "cpp",
+    "__memory": "cpp"
   }
 }
