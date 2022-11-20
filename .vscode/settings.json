@@ -64,6 +64,8 @@
     "algorithm": "cpp",
     "functional": "cpp",
     "numeric": "cpp",
-    "__memory": "cpp"
+    "__memory": "cpp",
+    "map": "cpp",
+    "set": "cpp"
   }
 }
