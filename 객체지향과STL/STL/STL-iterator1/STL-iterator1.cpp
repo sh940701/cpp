@@ -54,12 +54,19 @@ using std::endl;
 
 
 int main() {
+    // range_based for 문은 아래와 같이 동작한다.
     for (int num : Range(0, 3)) {
         cout << num << endl; // 0, 1, 2
     }
 
+    // 내부적으로 range_based for 문이 동작하는 방식은 다음과 같다.
     std::vector<int> v{1, 2, 3};
-    for (std::vector<int>::iterator iter = v.begin(); iter != v.end(); ++iter){
+    for (std::vector<int>::iterator iter = v.begin(); iter != v.end(); ++iter){}
 
+    // // 우리가 만든 Range 객체에 대입하면 아래와 같다.
+    Range R = Range(0, 7);
+
+    for (Range::Iterator iter = R.begin(); iter != R.end(); ++iter) {
+        cout << *iter << endl;
     }
 }
