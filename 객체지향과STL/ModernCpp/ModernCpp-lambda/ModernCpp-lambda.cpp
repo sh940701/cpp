@@ -90,3 +90,61 @@ using std::endl;
 // }
 
 
+// 레퍼런스로 캡쳐 시 주의사항
+// 람다를 리턴해주는 함수
+// auto func() {
+//     int num = 10;
+//     return [&]() {
+//         return num;
+//     };
+// }
+
+// int main() {
+//     int num0 = 10;
+//     int num1 = 20;
+
+//     auto func0 = [=] () {}; // 모든 녀석들을 다 값으로 캡쳐
+//     auto func1 = [&] () {}; // 모든 녀석들을 다 레퍼런스로 캡쳐
+//     auto func2 = [&, num0] () {}; // num0만 값으로 캡쳐
+//     auto func3 = [=, &num0] () {}; // num0만 레퍼런스로 캡쳐
+
+//     auto f = func();
+//     cout << f() << endl; // error, 위에 &num은 지역변수이기 때문에 이미 사라져있음
+// }
+
+
+
+// struct Test {
+//     int num = 10;
+//     auto func() {
+//         // 이 상태로는 캡쳐가 안됨. 이 num은 사실상 this->num이기 때문
+//         // return [num] {
+//         //     return num;
+//         // };
+//         // initializer capture로 실행
+//         // return [num = num] {
+//         //     return num;
+//         // };
+//         // 아래와 같이 내부적으로 변수를 선언해주어 사용도 할 수 있음
+//         return [num20 = num * 20] {
+//             return num20;
+//         };
+//     }
+// };
+
+
+
+// 캡쳐가 없는 람다는, 함수 포인터와도 호환이 된다.
+int main() {
+    void (*func)(int) = [](int) {};
+    func(3);
+
+    // generic lambda
+    auto func = [] (auto value) {
+        return value;
+    };
+
+    cout << func(10) << endl; // 10
+    cout << func("10") << endl; // 10
+    cout << func({1, 2, 3}) << endl; // error -> auto는 initializer_list를 추론할 수 없다.
+}
