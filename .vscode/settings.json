@@ -66,6 +66,15 @@
     "numeric": "cpp",
     "__memory": "cpp",
     "map": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "__tree": "cpp",
+    "deque": "cpp",
+    "memory_resource": "cpp",
+    "utility": "cpp",
+    "forward_list": "cpp",
+    "fstream": "cpp",
+    "list": "cpp",
+    "stack": "cpp",
+    "unordered_set": "cpp"
   }
 }
